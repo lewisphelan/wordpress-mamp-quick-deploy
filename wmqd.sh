@@ -19,7 +19,7 @@ printf "mySQL Password:"
 read MYSQLPASS
 printf "Name your database:"
 read DATABASENAME
-echo "CREATE DATABASE $DATABASENAME; GRANT ALL ON $DATABASENAME.* TO '$MYSQLUSER'@'localhost';" | ../../Library/bin/mysql -u $MYSQLUSER -p $MYSQLPASS
+echo "CREATE DATABASE $DATABASENAME; GRANT ALL ON $DATABASENAME.* TO '$MYSQLUSER'@'localhost';" | ../../Library/bin/mysql -u$MYSQLUSER -p$MYSQLPASS
 
 
 if [ -f ./wp-config.php ]
@@ -34,7 +34,7 @@ DBUSER=$"username_here"
 DBPASS=$"password_here"
 DBNAME=$"database_name_here"
 sed -i '' -e "s/${DBUSER}/${MYSQLUSER}/g" wp-config.php
-sed -i '' -e "s/${DBPASS}/${MYSQLPWD}/g" wp-config.php
-sed -i '' -e "s/${DBNAME}/${NEWDB}/g" wp-config.php
+sed -i '' -e "s/${DBPASS}/${MYSQLPASS}/g" wp-config.php
+sed -i '' -e "s/${DBNAME}/${DATABASENAME}/g" wp-config.php
 open http://localhost:8888/wp-admin/install.php
 fi
