@@ -1,6 +1,6 @@
 #!/bin/sh
 cd /Applications/MAMP/htdocs
-printf "PROJECTNAME"
+printf "Name your project:"
 read PROJECTNAME
 wget https://wordpress.org/latest.zip -P $PROJECTNAME
 cd $PROJECTNAME
@@ -10,14 +10,14 @@ cd wordpress
 mv * ..
 cd ..
 rm -r wordpress
-printf "MYSQLUSER"
+printf "mySQL Username:"
 read MYSQLUSER
 if [ "$MYSQLUSER" = ""]; then
   set MYSQLUSER = "root"
 fi
-printf "MYSQLPASS"
+printf "mySQL Password:"
 read MYSQLPASS
-printf "DATABASENAME"
+printf "Name your database:"
 read DATABASENAME
 echo "CREATE DATABASE $DATABASENAME; GRANT ALL ON $DATABASENAME.* TO '$MYSQLUSER'@'localhost';" | ../../Library/bin/mysql -u$MYSQLUSER -p$MYSQLPASS
 if [ -f ./wp-config.php ]
