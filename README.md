@@ -18,6 +18,7 @@ Requirements:
 
 Things to add:
   - Change MAMP root directory to $PROJECTNAME
+  - Eliminate need to use the install.php onboarding page.
   - Fallback to curl if wget is not installed.
   - Option to skip db name, user and pass entry.
   - Suggestions? Let me know!
