@@ -7,8 +7,9 @@ This shell script will install the latest version of WordPress from wordpress.or
 Requirements:
   - wget
   - Must have MAMP running and your document root set to /Applications/MAMP/htdocs
-  
+
 Things to add:
+  - Change MAMP root directory to $PROJECTNAME
   - Fallback to curl if wget is not installed.
   - Option to skip db name, user and pass entry.
   - Suggestions? Let me know!
