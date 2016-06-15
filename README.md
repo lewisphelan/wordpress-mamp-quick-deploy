@@ -8,6 +8,9 @@ Requirements:
   - wget
   - Must have MAMP running and your document root set to /Applications/MAMP/htdocs
 
+--
+
+
 Things to add:
   - Change MAMP root directory to $PROJECTNAME
   - Fallback to curl if wget is not installed.
