@@ -12,14 +12,16 @@ cd ..
 rm -r wordpress
 printf "mySQL Username:"
 read MYSQLUSER
-if [ "$MYSQLUSER" = ""]; then
-  set MYSQLUSER = "root"
-fi
+if [ "$MYSQLUSER" = "" ]; then
+		set MYSQLUSER = "root"
+	fi
 printf "mySQL Password:"
 read MYSQLPASS
 printf "Name your database:"
 read DATABASENAME
-echo "CREATE DATABASE $DATABASENAME; GRANT ALL ON $DATABASENAME.* TO '$MYSQLUSER'@'localhost';" | ../../Library/bin/mysql -u$MYSQLUSER -p$MYSQLPASS
+echo "CREATE DATABASE $DATABASENAME; GRANT ALL ON $DATABASENAME.* TO '$MYSQLUSER'@'localhost';" | ../../Library/bin/mysql -u $MYSQLUSER -p $MYSQLPASS
+
+
 if [ -f ./wp-config.php ]
 then
 open http://localhost:8888//wp-admin/install.php
